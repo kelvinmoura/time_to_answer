@@ -1,0 +1,2 @@
+module SiteBackoffice::WelcomeHelper
+end

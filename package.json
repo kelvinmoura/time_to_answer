@@ -1,0 +1,15 @@
+{
+  "name": "Kelvin",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "5.15.3",
+    "bootstrap": "4.3.1",
+    "jquery": "3.6.0",
+    "jquery.easing": "^1.4.1",
+    "popper.js": "1"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "kelvinmoura <kelvinestra@gmail.com>",
+  "license": "MIT"
+}
