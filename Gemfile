@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'pry', '~> 0.13.0'
 gem 'devise'
 gem 'rails-i18n', '~> 5.1'
 gem 'tty-spinner'
