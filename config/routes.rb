@@ -2,14 +2,13 @@ Rails.application.routes.draw do
   namespace :site do
     get 'welcome/index'
   end
-  namespace :site_backoffice do
-    get 'welcome/index'
-  end
   namespace :users_backoffice do
     get 'welcome/index'
   end
   namespace :admins_backoffice do
-    get 'welcome/index'
+    get 'welcome/index' # Dashboard
+    resources :admins, except: [ :delete ] #Admins
+    resources :subjects #Assuntos
   end
   devise_for :users
   devise_for :admins

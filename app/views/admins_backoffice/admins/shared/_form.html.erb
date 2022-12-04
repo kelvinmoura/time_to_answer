@@ -1,0 +1,40 @@
+
+
+<div class="container">
+    <!-- Contact Section Heading-->
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><%= "#{action_message} Administrador" %></h2>
+    <!-- Icon Divider-->
+    <div class="divider-custom">
+    </div>
+    <!-- Contact Section Form-->
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-xl-7">
+            <%= form_with(model: [:admins_backoffice, @admin], local: true) do |form| %>
+                <% if @admin.errors.any? %>
+                    <ul>
+                        <% @admin.errors.full_messages.each do |message|%>
+                        <li style="color: red;"><%= message %></li>
+                        <% end %>
+                    </ul>
+                <% end %>
+                <!-- Email address input-->
+                <div class="form-floating mb-3">
+                    <%= form.text_field :email, class:"form-control", placeholder:"name@example.com" %>
+                    <%= form.label :email %>
+                </div>
+                <!-- password input-->
+                <div class="form-floating mb-3">
+                    <%= form.password_field :password, class:"form-control", placeholder:"admin12@.."%>
+                    <%= form.label :password %>
+                </div>
+                <!-- password_confirmation input-->
+                <div class="form-floating mb-3">
+                    <%= form.password_field :password_confirmation, class:"form-control", placeholder:"admin12@.."%>
+                    <%= form.label :password_confirmation %>
+                </div>
+                <!-- has successfully submitted-->
+                <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Enviar</button>
+            <% end %>
+        </div>
+    </div>
+</div>
