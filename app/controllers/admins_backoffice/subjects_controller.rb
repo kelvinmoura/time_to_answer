@@ -11,10 +11,11 @@ class AdminsBackoffice::SubjectsController < AdminsBackofficeController
     
     def create
       @subject = Subject.new(params_subject)
-      if @subject.save
-        redirect_to admins_backoffice_subjects_path, notice: "Assunto criado com sucesso."
-      else
+      if params[:subject][:description].blank?
         render :new 
+      else
+        @subject.save
+        redirect_to admins_backoffice_subjects_path, notice: "Assunto criado com sucesso."
       end
     end
     
@@ -29,6 +30,12 @@ class AdminsBackoffice::SubjectsController < AdminsBackofficeController
         render :edit 
       end
     end
+    
+    def destroy
+        if @subject.destroy
+            redirect_to admins_backoffice_subjects_path, notice: "Assunto excluída com sucesso!"
+        end
+     end
     
     private
 

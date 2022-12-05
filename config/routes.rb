@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get 'welcome/index' # Dashboard
     resources :admins, except: [ :delete ] #Admins
     resources :subjects #Assuntos
+    resources :questions #Perguntas
   end
   devise_for :users
   devise_for :admins
