@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   namespace :admins_backoffice do
     get 'welcome/index' # Dashboard
-    resources :admins, except: [ :delete ] #Admins
+    resources :admins #Admins
     resources :subjects #Assuntos
     resources :questions #Perguntas
   end

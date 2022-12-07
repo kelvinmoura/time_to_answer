@@ -1,2 +1,2 @@
 <%= render partial: 'admins_backoffice/questions/shared/form',
-           locals: {action_message: "Criando "} %>
+           locals: {action_message: t('messages.creating', model: @question.model_name.human)} %>

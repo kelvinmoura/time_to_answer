@@ -2,7 +2,7 @@
 
 <div class="container">
     <!-- Contact Section Heading-->
-    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><%= "#{action_message} Administrador" %></h2>
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><%= "#{action_message}" %></h2>
     <!-- Icon Divider-->
     <div class="divider-custom">
     </div>
@@ -33,7 +33,7 @@
                     <%= form.label :password_confirmation %>
                 </div>
                 <!-- has successfully submitted-->
-                <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Enviar</button>
+                <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit"><%= t('messages.submit') %></button>
             <% end %>
         </div>
     </div>
