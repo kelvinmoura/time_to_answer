@@ -26,8 +26,15 @@
                     <%= form.label :subject %>
                     <%= form.collection_select(:subject_id, @subjects, :id,:description, {}, {class:"form-control"}) %>
                 </div>
+                <div id="answers">
+                    <%= form.fields_for :answers do |answer| %>
+                        <%= render partial: "answer_field", local: {f: answer} %>
+                    <% end %>  
+                    <br><%= link_to_add_association 'Adicionar Resposta', form, :answers, class:"btn btn-primary btn-xl", id:"submitButton" %>
+                </div>
                 <!-- has successfully submitted-->
-                <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit"><%= t('messages.submit') %></button>
+                <br>
+                <button class="btn btn-primary btn-xl" id="submitButton" type="submit"><%= t('messages.submit') %></button>
             <% end %>
         </div>
     </div>

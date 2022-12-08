@@ -12,8 +12,19 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 # /app/assets
-Rails.application.config.assets.precompile += %w( admins_backoffice.js admins_backoffice.css users_backoffice.js users_backoffice.css )
+Rails.application.config.assets.precompile += %w( admins_backoffice.js
+                                                  admins_backoffice.css
+                                                  users_backoffice.js
+                                                  users_backoffice.css
+                                                  admin_devise.js
+                                                  admin_devise.css )
 # /lib/assets
-Rails.application.config.assets.precompile += %w( sb-admin-2.min.js sb-admin-2.min.css custom.css custom.js img.jpg )
+Rails.application.config.assets.precompile += %w( sb-admin-2.min.js
+                                                  sb-admin-2.min.css
+                                                  custom.css
+                                                  custom.js
+                                                  img.jpg
+                                                  admin_devise.svg
+                                                  user_devise.svg )
 # /vendor/assets 
-Rails.application.config.assets.precompile += %w( jquery-2.2.4/dist/jquery.min.js  )
+Rails.application.config.assets.precompile += %w( jquery-2.2.4/dist/jquery.min.js )
