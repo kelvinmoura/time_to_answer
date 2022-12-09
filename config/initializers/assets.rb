@@ -17,7 +17,9 @@ Rails.application.config.assets.precompile += %w( admins_backoffice.js
                                                   users_backoffice.js
                                                   users_backoffice.css
                                                   admin_devise.js
-                                                  admin_devise.css )
+                                                  admin_devise.css
+                                                  site.js
+                                                  site.css)
 # /lib/assets
 Rails.application.config.assets.precompile += %w( sb-admin-2.min.js
                                                   sb-admin-2.min.css
@@ -25,6 +27,13 @@ Rails.application.config.assets.precompile += %w( sb-admin-2.min.js
                                                   custom.js
                                                   img.jpg
                                                   admin_devise.svg
-                                                  user_devise.svg )
+                                                  user_devise.svg
+                                                  styles.css
+                                                  scripts.js
+                                                  navbar-logo.svg
+                                                  close-icon.svg
+                                                  concurso.jpg
+                                                  Kelvin.jpg
+                                                  bootstrap.bundle.min.js)
 # /vendor/assets 
 Rails.application.config.assets.precompile += %w( jquery-2.2.4/dist/jquery.min.js )

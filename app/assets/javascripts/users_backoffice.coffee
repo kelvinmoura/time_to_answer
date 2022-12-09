@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 //= require jquery/dist/jquery.min.js
-//= require bootstrap/dist/js/bootstrap.bundle.min.js
+//= require bootstrap.bundle.min.js
 //= require jquery.easing/jquery.easing.min
 //= require sb-admin-2.min
 
