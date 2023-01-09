@@ -41,6 +41,8 @@ gem 'faker'
 gem 'kaminari'
 gem 'kaminari-i18n'
 gem 'cocoon'
+gem 'active_storage_validations', '~> 1.0', '>= 1.0.3'
+gem 'carrierwave'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

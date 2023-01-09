@@ -4,6 +4,7 @@ class Admin < ApplicationRecord
   devise :database_authenticatable,:recoverable,
          :rememberable, :validatable
 
+  has_many :rooms
   #kaminari 
   paginates_per 9
 end

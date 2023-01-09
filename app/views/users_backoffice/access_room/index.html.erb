@@ -1,0 +1,35 @@
+
+<div class="container">
+  <div class="card">
+  <p id="notice"><%= notice %></p>
+  </div>  
+  <% @rooms.each do |room| %>
+  <div class="card">
+    <div class="card-header" style="margin:auto;">
+      <%#= image_tag "#{room.attachment}", class:'img-fluid', style:'width: 1000px; height: 600px; border: none;' %>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= room.room_name %></h5>
+      <h5 class="card-title"><%= room.description %></h5>
+      <h5 class="card-title"><%= room.code %></h5>
+      <table>
+        <thead>
+            <tr role="row">
+                <th>Nome do Professor: <%= room.admin.description %></th>
+            </tr>
+        </thead>
+        <tbody>
+          <td>
+          <div style="line-height: 50px;">
+            <%= link_to users_backoffice_path(room), class: "btn btn-success" do %>
+                <i class="fa fa-bars"></i> Acessar 
+            <% end %>
+            </div>  
+          </td>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <% end %>
+</div>
+<%= paginate @rooms %>

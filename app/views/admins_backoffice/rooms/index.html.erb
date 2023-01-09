@@ -1,0 +1,43 @@
+<div class="card-header">
+    <%= link_to new_admins_backoffice_room_path, class: "btn btn-success", style:"float: right;" do %>
+      <i class="fa fa-plus"></i> Criar nova sala
+    <% end %>
+</div>
+<div class="container">
+  <div class="card">
+  </div>  
+  <% @rooms.each do |room| %>
+  <div class="card">
+    <div class="card-header" style="margin:auto;">
+      <%#= image_tag "#{room.attachment}", class:'img-fluid', style:'width: 1000px; height: 600px; border: none;' %>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= room.room_name %></h5>
+      <h5 class="card-title"><%= room.description %></h5>
+      <table>
+        <thead>
+            <tr role="row">
+                <th>Nome do Professor: <%= room.admin.description %></th>
+            </tr>
+        </thead>
+        <tbody>
+          <td>
+          <div style="line-height: 50px;">
+            <%= link_to admins_backoffice_room_path(room), class: "btn btn-success" do %>
+                <i class="fa fa-bars"></i> Acessar 
+            <% end %>
+            <%= link_to edit_admins_backoffice_room_path(room), class: "btn btn-primary" do %>
+                <i class="fa fa-edit"></i> Editar
+            <% end %>
+            <%= link_to admins_backoffice_room_path(room), method: :delete, class: "btn btn-danger", data: { confirm: t('messages.confirm_with', item: room.description.truncate(15))} do %>
+                <i class="fas fa-trash"></i> Deletar
+            <% end %>
+            </div>  
+          </td>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <% end %>
+</div>
+<%= paginate @rooms %>

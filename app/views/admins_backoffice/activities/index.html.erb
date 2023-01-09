@@ -1,0 +1,32 @@
+<div class="card shadow mb-4">
+<div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">Lista</h6>
+</div>
+<div class="card-body">
+<div class="table-responsive">
+    <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="dataTables_length" id="dataTable_length"></div></div>
+    <table class="table table-bordered dataTable" id="dataTable" width="50%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+        <tbody>
+            <% @activities.each do |activity| %>    
+            <tr>
+                <th><%= activity.id %></th>
+                <th><%= activity.description.truncate(50) %></th>
+                <th style="width: 110px;">
+                    <%= link_to edit_admins_backoffice_activity_path(activity), class: "btn btn-primary btn-circle" do %>
+                        <i class="fa fa-edit"></i>
+                    <% end %>
+                    <%= link_to admins_backoffice_activity_path(activity), method: :delete, class: "btn btn-danger btn-circle",
+                        data: {confirm: t('messages.confirm_with', item: activity.description.truncate(30)) }  do %>
+                        <i class="fas fa-trash"></i>
+                    <% end %>  
+                </th>
+            </tr> 
+            <% end %>
+        </tbody>
+        </table>
+        <div class="text-center">
+            <%= paginate @activities %>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,35 @@
+
+<div class="container">
+  <div class="card">
+  </div>  
+  <div class="card">
+    <div class="card-header" style="margin:auto;">
+      <%#= image_tag "#{room.attachment}", class:'img-fluid', style:'width: 1000px; height: 600px; border: none;' %>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= @room.room_name %></h5>
+      <h5 class="card-title"><%= @room.description %></h5>
+      <table>
+        <thead>
+            <tr role="row">
+                <th>Nome do Professor: <%= @room.admin.description %></th>
+            </tr>
+        </thead>
+        <tbody>
+          <td>
+          <div style="line-height: 50px;">
+            <%= form_with(url: users_backoffice_room_verify_path(@room.id), local: true, method: :post) do |form| %>
+                <p id="notice"><%= notice %></p>
+                <div class="form-floating mb-3">
+                    <%= form.label :code, 'Código da sala' %>
+                    <%= form.text_field :code, class:"form-control", placeholder:"Insira o código" %> 
+                </div>
+                <button class="btn btn-primary" type="submit">Enviar</button>
+            <% end %>
+          </div>  
+          </td>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="nested-fields">
+  <%= f.label :description, "Nome do arquivo" %>
+  <%= f.text_field :description %>
+  <br>
+  <%= f.label :attachment, "Arquivo" %>
+  <%= f.file_field :attachment %>
+  <%= link_to_remove_association "Remover arquivo", f %>
+</div>

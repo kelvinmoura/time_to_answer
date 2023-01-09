@@ -1,0 +1,42 @@
+<h1 class="text-center">Editando Sala Virtual</h1>
+<div class="container">
+    <!-- Contact Section Heading-->
+    <!-- Icon Divider-->
+    <div class="divider-custom">
+    </div>
+    <!-- Contact Section Form-->
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-xl-7">
+            <%= form_with(model: @room, url: admins_backoffice_room_path, local: true) do |form| %>
+                <% if @room.errors.any? %>
+                    <ul>
+                        <% @room.errors.full_messages.each do |message|%>
+                        <li style="color: red;"><%= message %></li>
+                        <% end %>
+                    </ul>
+                <% end %>
+                <div class="form-floating mb-3">
+                </div>
+                <div class="form-floating mb-3">
+                    <%= form.label :room_name, 'Nome da sala virtual' %>
+                    <%= form.text_field :room_name, class:"form-control" %>
+                </div>
+                <div class="form-floating mb-3">
+                    <%= form.label :description, 'Descrição da sala virtual' %>
+                    <%= form.text_area :description, class:"form-control" %>
+                </div>
+                <div class="form-floating mb-3">
+                    <%= form.label :code,'Matéria da sala virtual' %>
+                    <%= form.text_field :code, class:"form-control" %>
+                </div>
+                <div class="form-floating mb-3">
+                    <%= form.label :password,'Senha da sala' %>
+                    <%= form.text_field :password, class:"form-control" %>
+                </div>
+                <%= form.hidden_field :admin_id, value: current_admin.id %>
+                <br>
+                <button class="btn btn-primary btn-xl" style="float: left;" id="submitButton" type="submit"><%= t('messages.submit') %></button>
+            <% end %>
+        </div>
+    </div>
+</div>
